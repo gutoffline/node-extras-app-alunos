@@ -21,9 +21,17 @@ Este projeto oferece:
    ```bash
    npm install
    ```
-3. Crie um arquivo `.env` a partir do exemplo:
+3. Crie um arquivo `.env` na raiz do projeto (não há `.env.example` neste repositório):
    ```bash
-   cp .env.example .env
+   type nul > .env
+   ```
+   Adicione as variáveis:
+   ```ini
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=senha_do_banco
+   DB_NAME=nome_do_banco
+   PORT=3000
    ```
    Atualize os valores conforme seu banco.
 4. Execute o servidor:

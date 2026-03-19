@@ -9,10 +9,10 @@ app.use(express.json())
 const mysql = require('mysql');
 
 let conexao = mysql.createConnection({
-  host: process.env.DB_HOST || "108.179.193.209",
-  user: process.env.DB_USER || "gutoxa27_alunos",
-  password: process.env.DB_PASSWORD || "JD_eXLNHp1ZG",
-  database: process.env.DB_NAME || "gutoxa27_bd_loja"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 })
 
 conexao.connect(function (erro) {
