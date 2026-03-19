@@ -67,15 +67,13 @@ app.delete("/produto/:id", function (req, res) {
 
 app.post("/produto/", function (req, res) {
   const data = req.body
-  if (!data || typeof data.nome !== 'string' || data.nome.trim() === '') {
-    return res.status(400).json({ status: 400, message: 'O campo nome é obrigatório e deve ser uma string.' })
+  if (!data || typeof data.titulo !== 'string' || data.titulo.trim() === '') {
+    return res.status(400).json({ status: 400, message: 'O campo titulo é obrigatório e deve ser uma string.' })
   }
   if (typeof data.preco !== 'number' || Number.isNaN(data.preco)) {
     return res.status(400).json({ status: 400, message: 'O campo preco é obrigatório e deve ser número.' })
   }
-  if (typeof data.estoque !== 'number' || Number.isNaN(data.estoque)) {
-    return res.status(400).json({ status: 400, message: 'O campo estoque é obrigatório e deve ser número.' })
-  }
+
 
   conexao.query('INSERT INTO produtos set ?', [data], function (erro, resultado) {
     if (erro) {
